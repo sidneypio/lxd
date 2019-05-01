@@ -19,3 +19,6 @@ lxc exec n1 -- apt update
 lxc exec n1 -- apt upgrade
 lxc exec n1 -- apt install nginx
 
+###
+# redirecionando a porta 8080 para o servidor na porta 80 na maquina n1
+lxc config device add n1 myport8080 proxy listen=tcp:0.0.0.0:8080 connect=tcp:localhost:80
