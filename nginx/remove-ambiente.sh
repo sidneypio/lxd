@@ -4,6 +4,9 @@
 echo "Parando a maquina n1"
 lxc exec n1 -- /sbin/poweroff
 
+echo "Aguardando 5 segundos para remover"
+sleep 5
+
 echo "Removendo a  maquina  n1"
 lxc delete n1  
 

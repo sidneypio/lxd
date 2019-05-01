@@ -16,8 +16,8 @@ sleep 5
 ### NGINX
 echo "Instalando e configurando nginx"
 lxc exec n1 -- apt update
-lxc exec n1 -- apt upgrade
-lxc exec n1 -- apt install nginx
+lxc exec n1 -- apt upgrade -y
+lxc exec n1 -- apt install -y nginx
 
 ###
 # redirecionando a porta 8080 para o servidor na porta 80 na maquina n1
