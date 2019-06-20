@@ -12,3 +12,5 @@ lxc exec debianPadrao -- /usr/bin/apt update
 echo "Instalando alguns pacotes uteis para a disciplina"
 lxc exec debianPadrao -- /usr/bin/apt install -y tcpdump net-tools inetutils-ping traceroute iptables htop bind9-host dnsutils rsyslog
 
+echo "Desligando a maquina"
+lxc exec debianPadrao -- /sbin/poweroff
