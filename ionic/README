@@ -1,0 +1,7 @@
+
+
+Exemplo de utilização:
+- ionic start um tabs
+- cd um
+- ionic serve --address=0.0.0.0
+

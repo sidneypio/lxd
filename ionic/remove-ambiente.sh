@@ -9,6 +9,3 @@ sleep 5
 
 echo "Removendo o container ionic"
 lxc delete ionic  
-
-echo "Removendo a o redirecionamento"
-lxc config device remove ionic myport8080
