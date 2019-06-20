@@ -12,3 +12,5 @@ lxc exec ubuntu1904Padrao -- /usr/bin/apt update
 echo "Instalando alguns pacotes uteis para a disciplina"
 lxc exec ubuntu1904Padrao -- /usr/bin/apt install -y tcpdump net-tools  traceroute iptables htop bind9-host dnsutils
 
+echo "Desligando a maquina"
+lxc exec ubuntu1904Padrao -- /sbin/poweroff
