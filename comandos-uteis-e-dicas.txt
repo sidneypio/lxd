@@ -1,0 +1,40 @@
+Alguns comandos uteis (rascunho)
+
+
+verificando o ambiente
+lxc config device list ionic
+
+redirecionando portas (ja funcionou, mas no ubuntu deu erro)
+lxc config device add ionic myport8100 proxy listen=tcp:localhost:8100 connect=tcp:localhost:8100
+
+removendo o device
+lxc config device remove ionic  myport8100
+
+redirecionamento com iptables:
+iptables -t nat -I PREROUTING -i eth0 -p TCP -d $PUBLIC_IP --dport 8100 -j DNAT --to-destination $CONTAINER_IP:8100 -m comment --comment "forward to the Nginx container"'
+
+
+vendo alguns logs:
+lxc info ionic 
+lxc info ionic --show-log
+lxc config show ionic --expanded
+lxc restart ionic --debug
+
+verificando e editando a configuracao:
+lxc config edit ionic
+
+Alguns arquivos interessantes:
+/var/snap/lxd/common/lxd/logs/ionic
+
+Profile do apparmor:
+/var/snap/lxd/common/lxd/security/apparmor/profiles
+
+
+Paginas legais:
+
+https://linuxcontainers.org/lxd/
+https://blog.viasig.com/2018/01/lxd-o-virtualizador-ubuntu/
+https://www.digitalocean.com/community/tutorials/how-to-set-up-and-use-lxd-on-ubuntu-16-04
+https://discuss.linuxcontainers.org/t/news-feature-3-0-proxy-question/1552/16
+https://discuss.linuxcontainers.org/t/forward-port-80-and-443-from-wan-to-container/2042/2
+
