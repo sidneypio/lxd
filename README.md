@@ -1,2 +1,4 @@
-# inf572-2019
-Repositório com os arquivos para configuração dos exercícios de laboratório para a disciplina inf572 - IC/UNICAMP, edição 2019
+# lxd
+Esse repositório apresentará alguns arquivos relacionados com o LXD (https://linuxcontainers.org/lxd/)
+
+Alguns arquivos serão utilizados nos exercícios de laboratório para a disciplina INF572 do IC/UNICAMP, edição 2019
