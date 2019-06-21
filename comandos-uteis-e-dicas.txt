@@ -1,6 +1,5 @@
 Alguns comandos uteis (rascunho)
 
-
 verificando o ambiente
 lxc config device list ionic
 
