@@ -1,19 +1,4 @@
 #!/bin/bash
-# gera o ambiente:
-#
-#   A1 --------------+----------- R --------------- B1
-#      eth0          |       eth1   eth2       eth0
-#      10.10         |     10.100   20.100    20.10 
-#                    |
-#                    |
-#   A2 --------------+
-#      eth0          |
-#      (via dhcp)    |
-#                    |
-#   DHCP ------------+
-#      eth0          
-#      10.200
-#
 #
 echo "Criando redes "
 lxc network create redeAR ipv6.address=none ipv4.address=10.10.10.1/24 ipv4.nat=false ipv4.dhcp=false
