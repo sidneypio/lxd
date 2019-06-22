@@ -8,7 +8,6 @@ iface lo inet loopback
 auto eth0
 iface eth0 inet dhcp
 
-iface eth0 inet6 static
-    address 2001:db8:2018:A::20
-    netmask 64
+iface eth0 inet6 dhcp
+	request_prefix 1
 	gateway 2001:db8:2018:A::100
