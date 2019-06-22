@@ -34,8 +34,9 @@ lxc file push ./conf/R/sysctl.conf R/etc/sysctl.conf
 lxc file push ./conf/R/rc.local R/etc/rc.local
 
 echo "Iniciando containers"
-for maq in R A1 A2 B1 DHCP
+for maq in R A1 B1 DHCP
 do
+	echo "Iniciando container " $maq
 	lxc start $maq
 done
 
@@ -46,3 +47,8 @@ lxc file push ./conf/DHCP/isc-dhcp-server DHCP/etc/default/isc-dhcp-server
 lxc file push ./conf/DHCP/dhcpd.conf DHCP/etc/dhcp/dhcpd.conf
 lxc file push ./conf/DHCP/dhcpd6.conf DHCP/etc/dhcp/dhcpd6.conf
 lxc exec DHCP -- /usr/sbin/service isc-dhcp-server start
+
+echo ""
+echo "O container A2 deve ser inicializado manualmente para podermos acompanhar os logs do DHCP"
+echo "O comando utilizado é:"
+echo "lxc start A2"
