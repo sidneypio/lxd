@@ -46,6 +46,7 @@ done
 
 echo "Instalando radvd em R"
 lxc exec R -- /usr/bin/apt install -y radvd
+lxc exec R -- /usr/sbin/update-rc.d radvd enable
 
 ### DHCP
 echo "Instalando e configurando isc-dhcp-server"
