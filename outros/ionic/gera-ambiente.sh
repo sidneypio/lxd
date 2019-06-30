@@ -2,7 +2,7 @@
 # gera um container com ionic 
 #  
 echo "Criando o container ionic"
-lxc copy debianPadrao ionic
+lxc copy debian9Padrao ionic
 
 echo "Copiando configuracao de rede"
 lxc file push ./conf/ionic/interfaces ionic/etc/network/interfaces
