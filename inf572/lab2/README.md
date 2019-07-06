@@ -3,7 +3,7 @@ Os endereços são alocados estaticamente, exceto na máquina A2 que recebe a co
 um servidor DHCP ligado na rede A e o endereço IPv6 alocado estaticamente
 
 Ambiente gerado:
-
+```
    A1 ----------------------+---------------------- R ---------------------- B1
       eth0                  |                 eth1    eth2                     eth0
       10.10.10.10           |         10.10.10.100    10.10.20.100             10.10.20.10 
@@ -18,3 +18,4 @@ Ambiente gerado:
    DHCP --------------------+
       eth0          
       10.10.10.200
+```
