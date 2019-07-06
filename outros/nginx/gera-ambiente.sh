@@ -2,7 +2,7 @@
 # gera um container com nginx e libera acesso para a porta 8080
 #  
 echo "Criando o container nginx"
-lxc copy debian9Padrao nginx
+lxc copy debian9padrao nginx
 
 echo "Copiando configuracao de rede"
 lxc file push ./conf/nginx/interfaces nginx/etc/network/interfaces
