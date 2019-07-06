@@ -8,14 +8,14 @@ lxc network create redeBR ipv6.address=none ipv4.address=10.10.20.1/24 ipv4.nat=
 for maq in A1 A2 DHCP
 do
 	echo "Criando e configurando container " $maq
-	lxc copy debian9Padrao $maq
+	lxc copy debian9padrao $maq
 	lxc network attach redeAR $maq eth0
 	lxc file push ./conf/$maq/interfaces $maq/etc/network/interfaces
 done
 
 ### B
 echo "Criando a segunda maquina"
-lxc copy debian9Padrao B1
+lxc copy debian9padrao B1
 echo "Ligando interface na rede interna"
 lxc network attach redeBR B1 eth0
 echo "Copiando configuracao de rede"
@@ -23,7 +23,7 @@ lxc file push ./conf/B1/interfaces B1/etc/network/interfaces
 
 ### R
 echo "Criando roteador"
-lxc copy debian9Padrao R
+lxc copy debian9padrao R
 echo "Ligando interfaces"
 lxc network attach redeAR R eth1
 lxc network attach redeBR R eth2
