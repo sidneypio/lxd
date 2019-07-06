@@ -7,6 +7,7 @@ Além disso, temos o script install-apache-php.sh que instala um servidor apache
 
 
 Ambiente gerado:
+```
 
    A1 ----------------------+---------------------- R ---------------------- B1
       eth0                  |                 eth1    eth2                     eth0
@@ -22,3 +23,5 @@ Ambiente gerado:
    DHCP --------------------+
       eth0          
       10.10.10.200
+
+```
