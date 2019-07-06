@@ -16,7 +16,7 @@ echo "Atualizando lista de pacotes"
 lxc exec debian9padrao -- /usr/bin/apt update
 
 echo "Instalando alguns pacotes uteis para a disciplina"
-lxc exec debian9padrao -- /usr/bin/apt install -y tcpdump net-tools inetutils-ping traceroute iptables htop bind9-host dnsutils rsyslog links man
+lxc exec debian9padrao -- /usr/bin/apt install -y tcpdump apt-utils aptitude net-tools inetutils-ping traceroute iptables htop bind9-host dnsutils rsyslog links man nano
 
 echo "Ajustando o timezone para America/Sao_Paulo"
 lxc exec debian9padrao -- timedatectl set-timezone "America/Sao_Paulo"
