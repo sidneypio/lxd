@@ -40,9 +40,14 @@ echo "Copiando configuracoes"
 lxc file push ./conf/R/interfaces R/etc/network/interfaces 
 lxc file push ./conf/R/sysctl.conf R/etc/sysctl.conf
 lxc file push ./conf/R/rc.local R/etc/rc.local
+lxc file push ./conf/R/radvd.conf R/etc/radvd.conf
 
 echo "Iniciando containers"
 lxc start R
 lxc start A1
 lxc start A2
 lxc start B1
+
+echo "Instalando radvd em R"
+lxc exec R -- /usr/bin/apt install -y radvd
+lxc exec R -- /usr/sbin/update-rc.d radvd enable
