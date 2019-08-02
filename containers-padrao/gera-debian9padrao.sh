@@ -6,6 +6,9 @@ lxc init images:debian/stretch debian9padrao
 echo "Copiando arquivo de configuracao do dhcp (client)"
 lxc file push dhclient.conf debian9padrao/etc/dhcp/dhclient.conf  
 
+echo "Copiando arquivo de configuracao para forçar uso do IPv4 via apt"
+lxc file push 99force-ipv4 debian9padrao/etc/apt/apt.conf.d/99force-ipv4  
+
 echo "Inicializando o container"
 lxc start debian9padrao
 
