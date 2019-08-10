@@ -2,7 +2,6 @@
 # gera o ambiente
 #
 #
-CHAVE_PUBLICA=":/home/sidney/id_sidneypio_rsa.pub"
 
 echo "Criando redes "
 lxc network create redeAR ipv6.address=2001:db8:2018:A::1/64 ipv4.address=10.10.10.1/24 ipv4.nat=false ipv4.dhcp=false

@@ -1,15 +1,15 @@
 #!/bin/bash
 # remove o ambiente:
 #
-echo "Parando os containers (intervalo de 3 segundos para cada container)"
+echo "Parando os containers"
 for maq in A1 A2 B1 R DHCP
 do
 	echo "Parando $maq"
 	lxc exec $maq -- /sbin/poweroff
-	sleep 3
 done
 
-echo "Parando os containers (intervalo de 1 segundo para cada container)"
+for count in {9..0}; do printf "\rAguardando 10 segundos para a finalizacao dos containers: %02d" "$count"; sleep 1; done ; echo ""
+
 for maq in A1 A2 B1 R DHCP
 do
 	echo "Removendo $maq"

@@ -32,6 +32,7 @@ echo "Copiando configuracoes"
 lxc file push ./conf/R/interfaces R/etc/network/interfaces 
 lxc file push ./conf/R/sysctl.conf R/etc/sysctl.conf
 lxc file push ./conf/R/rc.local R/etc/rc.local
+lxc file push ./conf/R/radvd.conf R/etc/radvd.conf
 
 echo "Iniciando containers"
 for maq in R A1 B1 DHCP
@@ -40,6 +41,13 @@ do
 	lxc start $maq
 done
 
+for count in {9..0}; do printf "\rAguardando 10 segundos para a  inicializacao dos containers: %02d" "$count"; sleep 1; done ; echo ""
+
+### RADVD
+echo "Instalando radvd em R"
+lxc exec R -- /usr/bin/apt install -y radvd
+lxc exec R -- /usr/sbin/update-rc.d radvd enable
+
 ### DHCP
 echo "Instalando e configurando isc-dhcp-server"
 lxc exec DHCP -- /usr/bin/apt install -y isc-dhcp-server
@@ -47,6 +55,7 @@ lxc file push ./conf/DHCP/isc-dhcp-server DHCP/etc/default/isc-dhcp-server
 lxc file push ./conf/DHCP/dhcpd.conf DHCP/etc/dhcp/dhcpd.conf
 lxc file push ./conf/DHCP/dhcpd6.conf DHCP/etc/dhcp/dhcpd6.conf
 lxc exec DHCP -- /usr/sbin/service isc-dhcp-server start
+
 
 echo ""
 echo "O container A2 deve ser inicializado manualmente para podermos acompanhar os logs do DHCP"
