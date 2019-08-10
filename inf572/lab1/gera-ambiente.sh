@@ -1,6 +1,9 @@
 #!/bin/bash
 # gera o ambiente
 #
+#
+CHAVE_PUBLICA=":/home/sidney/id_sidneypio_rsa.pub"
+
 echo "Criando redes "
 lxc network create redeAR ipv6.address=2001:db8:2018:A::1/64 ipv4.address=10.10.10.1/24 ipv4.nat=false ipv4.dhcp=false
 lxc network create redeBR ipv6.address=2001:db8:2018:B::1/64 ipv4.address=10.10.20.1/24 ipv4.nat=false ipv4.dhcp=false
@@ -47,6 +50,9 @@ lxc start R
 lxc start A1
 lxc start A2
 lxc start B1
+
+echo "Aguardando 10 segundos para garantir que R esta no ar"
+sleep 10
 
 echo "Instalando radvd em R"
 lxc exec R -- /usr/bin/apt install -y radvd
