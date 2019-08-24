@@ -1,0 +1,4 @@
+domain inf500.org
+search inf500.org
+nameserver 10.10.10.50
+#nameserver 2001:db8:2018:a::100

@@ -19,7 +19,9 @@ echo "Atualizando lista de pacotes"
 lxc exec debian9padrao -- /usr/bin/apt update
 
 echo "Instalando alguns pacotes uteis para a disciplina"
-lxc exec debian9padrao -- /usr/bin/apt install -y tcpdump apt-utils aptitude net-tools inetutils-ping traceroute iptables htop bind9-host dnsutils rsyslog links man nano
+lxc exec debian9padrao -- /usr/bin/apt install -y telnet tcpdump apt-utils aptitude net-tools inetutils-ping traceroute iptables htop bind9-host dnsutils rsyslog links man nano
+# pacotes para a parte de roteamento
+lxc exec debian9padrao -- /usr/bin/apt install -y quagga quagga-doc quagga-core quagga-ripd quagga-ripngd quagga-ospfd quagga-ospf6d
 
 echo "Ajustando o timezone para America/Sao_Paulo"
 lxc exec debian9padrao -- timedatectl set-timezone "America/Sao_Paulo"

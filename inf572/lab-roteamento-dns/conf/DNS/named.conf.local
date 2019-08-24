@@ -1,0 +1,22 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "inf500.org" IN {
+	type master;
+	file "/etc/bind/master/inf500.zone";
+};
+
+zone "10.10.in-addr.arpa" IN {
+	type master;
+	file "/etc/bind/master/10-10.rev";
+};
+
+zone "8.1.0.2.8.b.d.0.1.0.0.2.ip6.arpa" {
+	type master;
+	file "/etc/bind/master/2001-db8-2018.rev";
+};

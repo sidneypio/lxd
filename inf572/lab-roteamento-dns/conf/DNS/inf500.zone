@@ -1,0 +1,29 @@
+$TTL	10800
+@	   IN	   SOA	   dns.inf500.org.    root.dns.inf500.org. (
+                        2019082301; version
+                        10800   ; refresh
+                        1800    ; retry the refresh
+                        1209600 ; expire
+                        3600 ) ; minimum ttl
+;
+; Name servers
+;
+	IN	NS      dns.inf500.org.
+;
+; MX records
+;
+	IN	MX	0 mail.inf500.org.
+	IN	MX	5 mail2.inf500.org.
+
+redeAR	IN      A       10.10.10.0
+A1	IN	A	10.10.10.10
+	IN	AAAA	2001:db8:2018:a::10
+A2	IN	A	10.10.10.20
+DNS	IN	A	10.10.10.50
+	IN	AAAA	2001:db8:2018:a::50
+R1	IN	A	10.10.10.1
+	IN	AAAA	2001:db8:2018:a::1		
+B1	IN	A	10.10.20.10
+	IN	AAAA	2001:db8:2018:b::10
+mail	IN	A	192.168.1.10
+mail2	IN	A	192.168.1.11
