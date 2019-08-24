@@ -1,0 +1,17 @@
+$TTL	10800
+@	IN	SOA	dns.inf500.org.	root.dns.inf500.org. (
+                        2019082202; version
+			10800
+                        1800
+			3600000
+			86400 )
+        IN      NS      dns.inf500.org.
+;
+; rede A e B 
+;
+0.10	IN	PTR	redeAR.inf500.org.
+1.10	IN	PTR	R1.inf500.org.
+10.10	IN	PTR	A1.inf500.org.
+100.10	IN	PTR	dns.inf500.org.
+10.20   IN      PTR     B1.inf500.org.
+
