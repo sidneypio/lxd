@@ -71,6 +71,7 @@ do
 	lxc file push ./conf/$roteador/zebra.conf   $roteador/etc/quagga/zebra.conf
 	lxc file push ./conf/$roteador/ripd.conf   $roteador/etc/quagga/ripd.conf
 	lxc file push ./conf/$roteador/ripngd.conf   $roteador/etc/quagga/ripngd.conf
+	lxc file push ./conf/$roteador/ospfd.conf   $roteador/etc/quagga/ospfd.conf
 	lxc exec $roteador -- chown -R quagga /etc/quagga
 	lxc exec $roteador -- systemctl start zebra
 	lxc exec $roteador -- systemctl start ripd
