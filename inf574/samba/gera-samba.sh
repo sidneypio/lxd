@@ -1,8 +1,6 @@
 #!/bin/bash
-# gera maquina samba
+# gera maquina samba: Controlador de dominio
 #
-#
- 
 
 ### samba
 echo "Criando a maquina samba"
@@ -15,15 +13,11 @@ echo "Copiando configuracao /etc/hosts"
 lxc file push ./conf/samba/hosts samba/etc/hosts
 echo "Copiando o script de instalacao do samba"
 lxc file push ./conf/samba/instala-samba.sh samba/root/instala-samba.sh --mode 0755
-echo "Copiando o script de instalacao do samba"
+echo "Copiando o script de teste do samba"
 lxc file push ./conf/samba/testa-samba.sh samba/root/testa-samba.sh --mode 0755
 
-echo "Iniciando containers"
+echo "Iniciando container"
 lxc start samba
 
-#echo "Aguardando 10 segundos para garantir que R esta no ar"
-#sleep 10
-
-#echo "Instalando radvd em R"
-#lxc exec R -- /usr/bin/apt install -y radvd
-#lxc exec R -- /usr/sbin/update-rc.d radvd enable
+echo "Agora logue no container samba e rode o script instala-samha.sh"
+echo "Boa Sorte !"

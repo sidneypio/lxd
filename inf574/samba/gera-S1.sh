@@ -22,3 +22,6 @@ lxc file push ./conf/S1/smb.conf S1/root/smb.conf
 echo "Iniciando containers"
 lxc start S1
 
+echo "Agora logue no container S1 e rode o script instala-client-samba.sh"
+echo "Boa Sorte !"
+
