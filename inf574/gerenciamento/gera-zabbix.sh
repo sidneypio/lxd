@@ -43,3 +43,6 @@ lxc file push ./conf/zabbix/php.ini zabbix/etc/php/7.0/apache2/php.ini --mode 06
 
 echo "Copiando o arquivo configura-zabbix-server.sh"
 lxc file push ./conf/zabbix/configura-zabbix-server.sh zabbix/root/configura-zabbix-server.sh --mode 0755
+
+echo "Instalando o agente zabbix no servidor"
+lxc exec zabbix --  /usr/bin/apt install -y zabbix-agent
