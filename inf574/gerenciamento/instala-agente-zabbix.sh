@@ -4,9 +4,9 @@
 # verifica o numero de argumentos 
 if [ "$#" -ne 1 ]; then
     echo "Eh necessario indicar como argumento o arquivo que tem a chave publica"
-    echo "./instala-zabbix.sh maquina"
+    echo "./instala-agente-zabbix.sh maquina"
     echo ""
-    echo "Por exemplo, ./instala-zabbix.sh A1"
+    echo "Por exemplo, ./instala-agente-zabbix.sh A1"
 else
     echo "Atualizando pacotes e instalando wget no container " $1
     lxc exec $1 -- /usr/bin/apt update

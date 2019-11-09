@@ -1,5 +1,5 @@
 #!/bin/bash
-# gera maquina snmp: Controlador de dominio
+# gera maquina snmp
 #
 
 ### snmp

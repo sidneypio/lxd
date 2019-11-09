@@ -18,6 +18,10 @@ lxc file push ./conf/zabbix/sources.list zabbix/etc/apt/sources.list --mode 0755
 echo "Iniciando container"
 lxc start zabbix
 
+echo ""
+echo "Pressione ENTER para continuar..."
+read
+
 echo "Atualizando pacotes e instalando wget"
 lxc exec zabbix -- /usr/bin/apt update
 lxc exec zabbix -- /usr/bin/apt upgrade -y
@@ -28,6 +32,10 @@ lxc exec zabbix --  wget https://repo.zabbix.com/zabbix/4.4/debian/pool/main/z/z
 lxc exec zabbix --  dpkg -i zabbix-release_4.4-1+stretch_all.deb
 lxc exec zabbix -- rm zabbix-release_4.4-1+stretch_all.deb
 lxc exec zabbix -- /usr/bin/apt update
+
+echo ""
+echo "Pressione ENTER para continuar..."
+read
 
 echo "Instalando zabbix server"
 lxc exec zabbix --  /usr/bin/apt install -y zabbix-server-mysql
@@ -43,6 +51,10 @@ lxc file push ./conf/zabbix/php.ini zabbix/etc/php/7.0/apache2/php.ini --mode 06
 
 echo "Copiando o arquivo configura-zabbix-server.sh"
 lxc file push ./conf/zabbix/configura-zabbix-server.sh zabbix/root/configura-zabbix-server.sh --mode 0755
+
+echo ""
+echo "Pressione ENTER para continuar..."
+read
 
 echo "Instalando o agente zabbix no servidor"
 lxc exec zabbix --  /usr/bin/apt install -y zabbix-agent
